@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Diwali - Diwali Coding Challenge</title>
+    <style>
+        /* Base Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1d1b31;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            min-height: 100vh;
+        }
+
+        /* Container for Centered Greeting */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+            position: relative;
+        }
+
+        /* Diwali Greeting Message with Animation */
+        .greeting {
+            color: #ffc107;
+            font-size: 4em;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 0 0 10px #ff4500, 0 0 20px #ff8c00;
+            animation: bounce 1.5s infinite alternate;
+        }
+
+        /* Animation for Greeting */
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+                color: #ffc107;
+            }
+            50% {
+                transform: translateY(-20px);
+                color: #ff4500;
+            }
+            100% {
+                transform: translateY(0);
+                color: #ffc107;
+            }
+        }
+
+        /* Bulb Strings */
+        .bulbs {
+            position: absolute;
+            top: 5%;
+            display: flex;
+            gap: 25px;
+            animation: bulbs-twinkle 1.5s infinite alternate;
+        }
+
+        .bulb {
+            width: 30px;
+            height: 30px;
+            background-color: #ffd700;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #ffd700;
+        }
+
+        @keyframes bulbs-twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Fireworks Animation */
+        .fireworks {
+            position: absolute;
+            bottom: 20%;
+            display: flex; /* Change to flex for multiple fireworks */
+            justify-content: space-between; /* Space them out */
+            width: 100%; /* Full width for fireworks */
+            animation: launch 6s infinite; /* Further increased duration for slower movement */
+        }
+
+        .firework {
+            width: 10px;
+            height: 80px;
+            background: #ff4500;
+            border-radius: 50%;
+            animation: burst 2s ease-out forwards; /* Increased duration for burst effect */
+            transform-origin: bottom center;
+        }
+
+        @keyframes launch {
+            0% { transform: translateY(100px) scaleY(0.8); opacity: 1; }
+            100% { transform: translateY(-400px) scaleY(1); opacity: 0; } /* Moved higher */
+        }
+
+        @keyframes burst {
+            0% { transform: scaleY(1); }
+            100% { transform: scaleY(3); opacity: 0; } /* Increased scale for a larger burst */
+        }
+
+        /* Flower Patterns */
+        .flowers {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            position: absolute;
+            bottom: 10%;
+            z-index: 5;
+            animation: bloom 2.5s infinite alternate;
+        }
+
+        .flower {
+            width: 50px;
+            height: 50px;
+            background-color: #ff5733;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #ff8c00;
+        }
+
+        @keyframes bloom {
+            0% { transform: scale(0.8); }
+            100% { transform: scale(1); }
+        }
+
+        /* Diyas Section */
+        .diyas {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            position: absolute;
+            bottom: 30px;
+        }
+
+        .diya {
+            width: 40px;
+            height: 20px;
+            background: linear-gradient(to top, #b5651d, #8b4513);
+            border-radius: 50% 50% 0 0;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            margin: 0 5px;
+        }
+
+        .diya::before {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 30px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: radial-gradient(circle, #8b4513, #4b2a14);
+            border-radius: 50% 50% 0 0;
+            z-index: -1;
+        }
+
+        .flame {
+            width: 12px;
+            height: 30px;
+            background: radial-gradient(circle at bottom, #ffa07a, #ff4500, #ff6347);
+            border-radius: 50% 50% 0 0;
+            position: absolute;
+            top: -25px;
+            left: 14px;
+            animation: flicker 0.6s infinite alternate;
+            box-shadow: 0 0 15px #ff6347;
+        }
+
+        @keyframes flicker {
+            0%, 100% { transform: translateX(0); opacity: 0.9; }
+            50% { transform: translateX(-2px); opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Centered Container for Greeting and Elements -->
+    <div class="container">
+        <!-- Greeting Message -->
+        <div class="greeting">✨ Happy Diwali! ✨</div>
+        
+        <!-- Bulb String -->
+        <div class="bulbs" style="top: 10%;">
+            <div class="bulb" style="background: #d5f40b;"></div>
+            <div class="bulb" style="background: #faf9f9;"></div>
+            <div class="bulb" style="background: #d5f40b;"></div>
+            <div class="bulb" style="background: #faf9f9;"></div>
+            <div class="bulb" style="background: #d5f40b;"></div>
+            <div class="bulb" style="background: #faf9f9;"></div>
+            <div class="bulb" style="background: #d5f40b;"></div>
+            <div class="bulb" style="background: #faf9f9;"></div>
+            <div class="bulb" style="background: #d5f40b;"></div>
+            <div class="bulb" style="background: #faf9f9;"></div>
+            <div class="bulb" style="background: #d5f40b;"></div>
+            <div class="bulb" style="background: #faf9f9;"></div>
+            <div class="bulb" style="background: #d5f40b;"></div>
+            <div class="bulb" style="background: #faf9f9;"></div>
+            <div class="bulb" style="background: #d5f40b;"></div>
+            <div class="bulb" style="background: #faf9f9;"></div>
+            <div class="bulb" style="background: #d5f40b;"></div>
+            <div class="bulb" style="background: #faf9f9;"></div>
+        </div>
+
+        <!-- Fireworks Animation -->
+        <div class="fireworks">
+            <div class="firework" style="animation-delay: 6s;"></div>
+            <div class="firework" style="animation-delay: 9s;"></div>
+            <div class="firework" style="animation-delay: 5s;"></div>
+            <div class="firework" style="animation-delay: 6s;"></div>
+            <div class="firework" style="animation-delay: 9s;"></div>
+            <div class="firework" style="animation-delay: 5s;"></div>
+        </div>
+
+        <!-- Flower Patterns -->
+        <div class="flowers">
+            <div class="flower" style="background: #ff5733;"></div>
+            <div class="flower" style="background: #ff8c00;"></div>
+            <div class="flower" style="background: #ffa07a;"></div>
+            <div class="flower" style="background: #a79d0f;"></div>
+            <div class="flower" style="background: #e26736;"></div>
+        </div>
+
+        <!-- Diyas Section -->
+        <div class="diyas">
+            <div class="diya">
+                <div class="flame"></div>
+            </div>
+            <div class="diya">
+                <div class="flame"></div>
+            </div>
+            <div class="diya">
+                <div class="flame"></div>
+            </div>
+            <div class="diya">
+                <div class="flame"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
