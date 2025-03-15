@@ -1,0 +1,82 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode nav {
+    background-color: #222;
+}
+
+/* Webcam Section */
+.webcam-container {
+    margin-top: 30px;
+}
+
+video {
+    width: 50%;
+    border-radius: 10px;
+    border: 2px solid #333;
+}
+
+/* Capture Button Animation */
+.capture-btn {
+    margin-top: 15px;
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.capture-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* ASL Chart */
+.asl-chart {
+    margin-top: 40px;
+}
+
+.asl-chart img {
+    width: 60%;
+    border-radius: 10px;
+    border: 2px solid #333;
+}
+
+/* Dark Mode Button */
+#darkModeToggle {
+    background-color: #555;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#darkModeToggle:hover {
+    background-color: #777;
+}
